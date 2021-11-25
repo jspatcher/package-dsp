@@ -1,0 +1,38 @@
+{
+  "name": "@jspatcher/package-dsp",
+  "version": "1.0.0",
+  "description": "The DSP package for JSPatcher",
+  "main": "dist/index.js",
+  "scripts": {
+    "prebuild": "node src/scripts/build-faust.js",
+    "build": "webpack --mode development",
+    "build-watch": "webpack --mode development --watch --stats-children"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jspatcher/package-dsp.git"
+  },
+  "keywords": [
+    "jspatcher"
+  ],
+  "jspatcher": {
+    "isJSPatcherPackage": true,
+    "thumbnail": "",
+    "jspatpkg": "index.jspatpkg.js"
+  },
+  "author": "Fr0stbyteR",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/jspatcher/package-dsp/issues"
+  },
+  "homepage": "https://github.com/jspatcher/package-dsp#readme",
+  "devDependencies": {
+    "@jspatcher/jspatcher": "^0.0.9",
+    "@shren/faustwasm": "^0.0.6",
+    "clean-webpack-plugin": "^4.0.0",
+    "esbuild-loader": "^2.16.0",
+    "typescript": "^4.4.4",
+    "webpack": "^5.64.1",
+    "webpack-cli": "^4.9.1"
+  }
+}
