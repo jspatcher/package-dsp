@@ -1,0 +1,33 @@
+{
+    "name": "acos",
+    "filename": "acos",
+    "version": "2.32.6",
+    "compile_options": "-lang wasm-i -es 1 -single -ftz 0",
+    "include_pathnames": [
+        "/share/faust",
+        "/usr/local/share/faust",
+        "/usr/share/faust",
+        "."
+    ],
+    "size": 4,
+    "inputs": 1,
+    "outputs": 1,
+    "meta": [
+        {
+            "compile_options": "-lang wasm-i -es 1 -single -ftz 0"
+        },
+        {
+            "filename": "acos"
+        },
+        {
+            "name": "acos"
+        }
+    ],
+    "ui": [
+        {
+            "type": "vgroup",
+            "label": "acos",
+            "items": []
+        }
+    ]
+}

@@ -65,12 +65,14 @@ export default class FaustDspObject<
             const { inputs, outputs } = meta;
             this.inlets = inputs;
             this.outlets = outputs;
-            const merger = this.audioCtx.createChannelMerger(inputs);
-            const splitter = this.audioCtx.createChannelSplitter(outputs);
-            this._.merger = merger;
-            this._.splitter = splitter;
             this.disconnectAudio();
-            this.inletAudioConnections = new Array(inputs).fill(null).map((v, i) => ({ node: merger, index: i }));
+            if (inputs) {
+                const merger = this.audioCtx.createChannelMerger(inputs);
+                this._.merger = merger;
+                this.inletAudioConnections = new Array(inputs).fill(null).map((v, i) => ({ node: merger, index: i }));
+            }
+            const splitter = this.audioCtx.createChannelSplitter(outputs);
+            this._.splitter = splitter;
             this.outletAudioConnections = new Array(outputs).fill(null).map((v, i) => ({ node: splitter, index: i }));
             this.connectAudio();
         });
@@ -78,7 +80,7 @@ export default class FaustDspObject<
             const { dspFactory, faustDspGenerator, dspId, constant, merger, splitter } = this._;
             const node = await faustDspGenerator.createNode(this.audioCtx, dspId, dspFactory);
             this._.node = node;
-            merger.connect(node);
+            merger?.connect(node);
             node.connect(splitter);
             constant.offset.value = +this.args[0] || 0;
             constant.start();

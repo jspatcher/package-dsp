@@ -7,17 +7,137 @@
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 var map = {
+	"./abs/dspMeta.json": [
+		"./dsps/abs/dspMeta.json",
+		"dsps_abs_dspMeta_json"
+	],
+	"./acos/dspMeta.json": [
+		"./dsps/acos/dspMeta.json",
+		"dsps_acos_dspMeta_json"
+	],
+	"./acosh/dspMeta.json": [
+		"./dsps/acosh/dspMeta.json",
+		"dsps_acosh_dspMeta_json"
+	],
 	"./add/dspMeta.json": [
 		"./dsps/add/dspMeta.json",
 		"dsps_add_dspMeta_json"
+	],
+	"./asin/dspMeta.json": [
+		"./dsps/asin/dspMeta.json",
+		"dsps_asin_dspMeta_json"
+	],
+	"./asinh/dspMeta.json": [
+		"./dsps/asinh/dspMeta.json",
+		"dsps_asinh_dspMeta_json"
+	],
+	"./atan/dspMeta.json": [
+		"./dsps/atan/dspMeta.json",
+		"dsps_atan_dspMeta_json"
+	],
+	"./atan2/dspMeta.json": [
+		"./dsps/atan2/dspMeta.json",
+		"dsps_atan2_dspMeta_json"
+	],
+	"./atanh/dspMeta.json": [
+		"./dsps/atanh/dspMeta.json",
+		"dsps_atanh_dspMeta_json"
+	],
+	"./atodb/dspMeta.json": [
+		"./dsps/atodb/dspMeta.json",
+		"dsps_atodb_dspMeta_json"
+	],
+	"./bitand/dspMeta.json": [
+		"./dsps/bitand/dspMeta.json",
+		"dsps_bitand_dspMeta_json"
+	],
+	"./bitor/dspMeta.json": [
+		"./dsps/bitor/dspMeta.json",
+		"dsps_bitor_dspMeta_json"
+	],
+	"./bitxor/dspMeta.json": [
+		"./dsps/bitxor/dspMeta.json",
+		"dsps_bitxor_dspMeta_json"
+	],
+	"./change/dspMeta.json": [
+		"./dsps/change/dspMeta.json",
+		"dsps_change_dspMeta_json"
+	],
+	"./dbtoa/dspMeta.json": [
+		"./dsps/dbtoa/dspMeta.json",
+		"dsps_dbtoa_dspMeta_json"
 	],
 	"./div/dspMeta.json": [
 		"./dsps/div/dspMeta.json",
 		"dsps_div_dspMeta_json"
 	],
+	"./eq/dspMeta.json": [
+		"./dsps/eq/dspMeta.json",
+		"dsps_eq_dspMeta_json"
+	],
+	"./ftom/dspMeta.json": [
+		"./dsps/ftom/dspMeta.json",
+		"dsps_ftom_dspMeta_json"
+	],
+	"./geq/dspMeta.json": [
+		"./dsps/geq/dspMeta.json",
+		"dsps_geq_dspMeta_json"
+	],
+	"./gtr/dspMeta.json": [
+		"./dsps/gtr/dspMeta.json",
+		"dsps_gtr_dspMeta_json"
+	],
+	"./leq/dspMeta.json": [
+		"./dsps/leq/dspMeta.json",
+		"dsps_leq_dspMeta_json"
+	],
+	"./log/dspMeta.json": [
+		"./dsps/log/dspMeta.json",
+		"dsps_log_dspMeta_json"
+	],
+	"./lss/dspMeta.json": [
+		"./dsps/lss/dspMeta.json",
+		"dsps_lss_dspMeta_json"
+	],
+	"./max/dspMeta.json": [
+		"./dsps/max/dspMeta.json",
+		"dsps_max_dspMeta_json"
+	],
+	"./min/dspMeta.json": [
+		"./dsps/min/dspMeta.json",
+		"dsps_min_dspMeta_json"
+	],
+	"./mod/dspMeta.json": [
+		"./dsps/mod/dspMeta.json",
+		"dsps_mod_dspMeta_json"
+	],
+	"./mtof/dspMeta.json": [
+		"./dsps/mtof/dspMeta.json",
+		"dsps_mtof_dspMeta_json"
+	],
 	"./mul/dspMeta.json": [
 		"./dsps/mul/dspMeta.json",
 		"dsps_mul_dspMeta_json"
+	],
+	"./neq/dspMeta.json": [
+		"./dsps/neq/dspMeta.json",
+		"dsps_neq_dspMeta_json"
+	],
+	"./noise/dspMeta.json": [
+		"./dsps/noise/dspMeta.json",
+		"dsps_noise_dspMeta_json"
+	],
+	"./pink/dspMeta.json": [
+		"./dsps/pink/dspMeta.json",
+		"dsps_pink_dspMeta_json"
+	],
+	"./rdiv/dspMeta.json": [
+		"./dsps/rdiv/dspMeta.json",
+		"dsps_rdiv_dspMeta_json"
+	],
+	"./rsub/dspMeta.json": [
+		"./dsps/rsub/dspMeta.json",
+		"dsps_rsub_dspMeta_json"
 	],
 	"./sub/dspMeta.json": [
 		"./dsps/sub/dspMeta.json",
@@ -51,17 +171,137 @@ module.exports = webpackAsyncContext;
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 var map = {
+	"./abs/dspModule.wasm": [
+		"./dsps/abs/dspModule.wasm",
+		"dsps_abs_dspModule_wasm"
+	],
+	"./acos/dspModule.wasm": [
+		"./dsps/acos/dspModule.wasm",
+		"dsps_acos_dspModule_wasm"
+	],
+	"./acosh/dspModule.wasm": [
+		"./dsps/acosh/dspModule.wasm",
+		"dsps_acosh_dspModule_wasm"
+	],
 	"./add/dspModule.wasm": [
 		"./dsps/add/dspModule.wasm",
 		"dsps_add_dspModule_wasm"
+	],
+	"./asin/dspModule.wasm": [
+		"./dsps/asin/dspModule.wasm",
+		"dsps_asin_dspModule_wasm"
+	],
+	"./asinh/dspModule.wasm": [
+		"./dsps/asinh/dspModule.wasm",
+		"dsps_asinh_dspModule_wasm"
+	],
+	"./atan/dspModule.wasm": [
+		"./dsps/atan/dspModule.wasm",
+		"dsps_atan_dspModule_wasm"
+	],
+	"./atan2/dspModule.wasm": [
+		"./dsps/atan2/dspModule.wasm",
+		"dsps_atan2_dspModule_wasm"
+	],
+	"./atanh/dspModule.wasm": [
+		"./dsps/atanh/dspModule.wasm",
+		"dsps_atanh_dspModule_wasm"
+	],
+	"./atodb/dspModule.wasm": [
+		"./dsps/atodb/dspModule.wasm",
+		"dsps_atodb_dspModule_wasm"
+	],
+	"./bitand/dspModule.wasm": [
+		"./dsps/bitand/dspModule.wasm",
+		"dsps_bitand_dspModule_wasm"
+	],
+	"./bitor/dspModule.wasm": [
+		"./dsps/bitor/dspModule.wasm",
+		"dsps_bitor_dspModule_wasm"
+	],
+	"./bitxor/dspModule.wasm": [
+		"./dsps/bitxor/dspModule.wasm",
+		"dsps_bitxor_dspModule_wasm"
+	],
+	"./change/dspModule.wasm": [
+		"./dsps/change/dspModule.wasm",
+		"dsps_change_dspModule_wasm"
+	],
+	"./dbtoa/dspModule.wasm": [
+		"./dsps/dbtoa/dspModule.wasm",
+		"dsps_dbtoa_dspModule_wasm"
 	],
 	"./div/dspModule.wasm": [
 		"./dsps/div/dspModule.wasm",
 		"dsps_div_dspModule_wasm"
 	],
+	"./eq/dspModule.wasm": [
+		"./dsps/eq/dspModule.wasm",
+		"dsps_eq_dspModule_wasm"
+	],
+	"./ftom/dspModule.wasm": [
+		"./dsps/ftom/dspModule.wasm",
+		"dsps_ftom_dspModule_wasm"
+	],
+	"./geq/dspModule.wasm": [
+		"./dsps/geq/dspModule.wasm",
+		"dsps_geq_dspModule_wasm"
+	],
+	"./gtr/dspModule.wasm": [
+		"./dsps/gtr/dspModule.wasm",
+		"dsps_gtr_dspModule_wasm"
+	],
+	"./leq/dspModule.wasm": [
+		"./dsps/leq/dspModule.wasm",
+		"dsps_leq_dspModule_wasm"
+	],
+	"./log/dspModule.wasm": [
+		"./dsps/log/dspModule.wasm",
+		"dsps_log_dspModule_wasm"
+	],
+	"./lss/dspModule.wasm": [
+		"./dsps/lss/dspModule.wasm",
+		"dsps_lss_dspModule_wasm"
+	],
+	"./max/dspModule.wasm": [
+		"./dsps/max/dspModule.wasm",
+		"dsps_max_dspModule_wasm"
+	],
+	"./min/dspModule.wasm": [
+		"./dsps/min/dspModule.wasm",
+		"dsps_min_dspModule_wasm"
+	],
+	"./mod/dspModule.wasm": [
+		"./dsps/mod/dspModule.wasm",
+		"dsps_mod_dspModule_wasm"
+	],
+	"./mtof/dspModule.wasm": [
+		"./dsps/mtof/dspModule.wasm",
+		"dsps_mtof_dspModule_wasm"
+	],
 	"./mul/dspModule.wasm": [
 		"./dsps/mul/dspModule.wasm",
 		"dsps_mul_dspModule_wasm"
+	],
+	"./neq/dspModule.wasm": [
+		"./dsps/neq/dspModule.wasm",
+		"dsps_neq_dspModule_wasm"
+	],
+	"./noise/dspModule.wasm": [
+		"./dsps/noise/dspModule.wasm",
+		"dsps_noise_dspModule_wasm"
+	],
+	"./pink/dspModule.wasm": [
+		"./dsps/pink/dspModule.wasm",
+		"dsps_pink_dspModule_wasm"
+	],
+	"./rdiv/dspModule.wasm": [
+		"./dsps/rdiv/dspModule.wasm",
+		"dsps_rdiv_dspModule_wasm"
+	],
+	"./rsub/dspModule.wasm": [
+		"./dsps/rsub/dspModule.wasm",
+		"dsps_rsub_dspModule_wasm"
 	],
 	"./sub/dspModule.wasm": [
 		"./dsps/sub/dspModule.wasm",
@@ -2887,12 +3127,14 @@ class FaustDspObject extends _sdk__WEBPACK_IMPORTED_MODULE_1__.DefaultObject {
       const { inputs, outputs } = meta;
       this.inlets = inputs;
       this.outlets = outputs;
-      const merger = this.audioCtx.createChannelMerger(inputs);
-      const splitter = this.audioCtx.createChannelSplitter(outputs);
-      this._.merger = merger;
-      this._.splitter = splitter;
       this.disconnectAudio();
-      this.inletAudioConnections = new Array(inputs).fill(null).map((v, i) => ({ node: merger, index: i }));
+      if (inputs) {
+        const merger = this.audioCtx.createChannelMerger(inputs);
+        this._.merger = merger;
+        this.inletAudioConnections = new Array(inputs).fill(null).map((v, i) => ({ node: merger, index: i }));
+      }
+      const splitter = this.audioCtx.createChannelSplitter(outputs);
+      this._.splitter = splitter;
       this.outletAudioConnections = new Array(outputs).fill(null).map((v, i) => ({ node: splitter, index: i }));
       this.connectAudio();
     });
@@ -2900,7 +3142,7 @@ class FaustDspObject extends _sdk__WEBPACK_IMPORTED_MODULE_1__.DefaultObject {
       const { dspFactory, faustDspGenerator, dspId, constant, merger, splitter } = this._;
       const node = await faustDspGenerator.createNode(this.audioCtx, dspId, dspFactory);
       this._.node = node;
-      merger.connect(node);
+      merger == null ? void 0 : merger.connect(node);
       node.connect(splitter);
       constant.offset.value = +this.args[0] || 0;
       constant.start();
@@ -3090,7 +3332,7 @@ const {
   \**********************/
 /***/ ((module) => {
 
-module.exports = "{\n  \"name\": \"@jspatcher/package-dsp\",\n  \"version\": \"1.0.0\",\n  \"description\": \"The DSP package for JSPatcher\",\n  \"main\": \"dist/index.js\",\n  \"scripts\": {\n    \"prebuild\": \"node src/scripts/build-faust.js\",\n    \"build\": \"webpack --mode development --stats-error-details\",\n    \"build-watch\": \"webpack --mode development --watch --stats-children\"\n  },\n  \"repository\": {\n    \"type\": \"git\",\n    \"url\": \"git+https://github.com/jspatcher/package-dsp.git\"\n  },\n  \"keywords\": [\n    \"jspatcher\"\n  ],\n  \"jspatcher\": {\n    \"isJSPatcherPackage\": true,\n    \"thumbnail\": \"\",\n    \"jspatpkg\": \"index.jspatpkg.js\"\n  },\n  \"author\": \"Fr0stbyteR\",\n  \"license\": \"GPL-3.0-or-later\",\n  \"bugs\": {\n    \"url\": \"https://github.com/jspatcher/package-dsp/issues\"\n  },\n  \"homepage\": \"https://github.com/jspatcher/package-dsp#readme\",\n  \"devDependencies\": {\n    \"@jspatcher/jspatcher\": \"^0.0.9\",\n    \"@shren/faustwasm\": \"^0.0.6\",\n    \"clean-webpack-plugin\": \"^4.0.0\",\n    \"esbuild-loader\": \"^2.16.0\",\n    \"typescript\": \"^4.4.4\",\n    \"webpack\": \"^5.64.1\",\n    \"webpack-cli\": \"^4.9.1\"\n  }\n}\n";
+module.exports = "{\n  \"name\": \"@jspatcher/package-dsp\",\n  \"version\": \"1.0.0\",\n  \"description\": \"The DSP package for JSPatcher\",\n  \"main\": \"dist/index.js\",\n  \"scripts\": {\n    \"prebuild\": \"node src/scripts/build-faust.js\",\n    \"build\": \"webpack --mode development\",\n    \"build-watch\": \"webpack --mode development --watch --stats-children\"\n  },\n  \"repository\": {\n    \"type\": \"git\",\n    \"url\": \"git+https://github.com/jspatcher/package-dsp.git\"\n  },\n  \"keywords\": [\n    \"jspatcher\"\n  ],\n  \"jspatcher\": {\n    \"isJSPatcherPackage\": true,\n    \"thumbnail\": \"\",\n    \"jspatpkg\": \"index.jspatpkg.js\"\n  },\n  \"author\": \"Fr0stbyteR\",\n  \"license\": \"GPL-3.0-or-later\",\n  \"bugs\": {\n    \"url\": \"https://github.com/jspatcher/package-dsp/issues\"\n  },\n  \"homepage\": \"https://github.com/jspatcher/package-dsp#readme\",\n  \"devDependencies\": {\n    \"@jspatcher/jspatcher\": \"^0.0.9\",\n    \"@shren/faustwasm\": \"^0.0.6\",\n    \"clean-webpack-plugin\": \"^4.0.0\",\n    \"esbuild-loader\": \"^2.16.0\",\n    \"typescript\": \"^4.4.4\",\n    \"webpack\": \"^5.64.1\",\n    \"webpack-cli\": \"^4.9.1\"\n  }\n}\n";
 
 /***/ })
 
@@ -3201,7 +3443,7 @@ module.exports = "{\n  \"name\": \"@jspatcher/package-dsp\",\n  \"version\": \"1
 /******/ 	// This function allow to reference async chunks
 /******/ 	__webpack_require__.u = (chunkId) => {
 /******/ 		// return url for filenames based on template
-/******/ 		return "js/" + {"dsps_dsps_json":"9834f8ef5d2c36eb3542","dsps_add_dspModule_wasm":"0d1387618bad1ae17ae1","dsps_div_dspModule_wasm":"cfe50ad6665653129c85","dsps_mul_dspModule_wasm":"f2260894f0c9e561ad9e","dsps_sub_dspModule_wasm":"c9230d79b2d04ae9ef52","dsps_add_dspMeta_json":"6da97aa4361554dd99e7","dsps_div_dspMeta_json":"66288eba2b16e46319c5","dsps_mul_dspMeta_json":"0fe7a788b828c4f3b32c","dsps_sub_dspMeta_json":"d10f0d4270bcf7822fa0"}[chunkId] + ".js";
+/******/ 		return "js/" + {"dsps_dsps_json":"d41e36cac85c0c8ad1a2","dsps_abs_dspModule_wasm":"0e895ee6791de50053bb","dsps_acos_dspModule_wasm":"e26672c503d40f2111d4","dsps_acosh_dspModule_wasm":"6f0aa6108ac31d9d293e","dsps_add_dspModule_wasm":"0d1387618bad1ae17ae1","dsps_asin_dspModule_wasm":"9353243215bc0de84983","dsps_asinh_dspModule_wasm":"7b13096f6480c9b64a41","dsps_atan_dspModule_wasm":"17811b5924fc4bcfa2d0","dsps_atan2_dspModule_wasm":"f39523de16707d695fab","dsps_atanh_dspModule_wasm":"46eefbd4bf523e0daada","dsps_atodb_dspModule_wasm":"4b669635bed770a4f84d","dsps_bitand_dspModule_wasm":"4ce0f5b5615b165a0a6b","dsps_bitor_dspModule_wasm":"757fa92aaed2a537a27d","dsps_bitxor_dspModule_wasm":"502e84d5f3212e454632","dsps_change_dspModule_wasm":"a3e83b249ba823cce546","dsps_dbtoa_dspModule_wasm":"42f19657f03936408587","dsps_div_dspModule_wasm":"cfe50ad6665653129c85","dsps_eq_dspModule_wasm":"43be7dbe2410d2fff2f0","dsps_ftom_dspModule_wasm":"ceb793c4c0589a21cab7","dsps_geq_dspModule_wasm":"40677f34330c17e708d6","dsps_gtr_dspModule_wasm":"209c0a8f8152f67e5f23","dsps_leq_dspModule_wasm":"d8e31072f31be1422b08","dsps_log_dspModule_wasm":"656a3462f5b4865c39be","dsps_lss_dspModule_wasm":"135a1b64bae9f9568679","dsps_max_dspModule_wasm":"c106ea8e46f7c2f380b6","dsps_min_dspModule_wasm":"3cb2431b0f63dd3d73fe","dsps_mod_dspModule_wasm":"c873f5866950d927e2bb","dsps_mtof_dspModule_wasm":"489240c018cf3f9993da","dsps_mul_dspModule_wasm":"f2260894f0c9e561ad9e","dsps_neq_dspModule_wasm":"537121f702a700f5eade","dsps_noise_dspModule_wasm":"91ac41da19a38f77c84e","dsps_pink_dspModule_wasm":"86e1dda760e4f0723259","dsps_rdiv_dspModule_wasm":"52bd0a1a7acf79006f68","dsps_rsub_dspModule_wasm":"69b5bc21a2aa08fff8ea","dsps_sub_dspModule_wasm":"c9230d79b2d04ae9ef52","dsps_abs_dspMeta_json":"6c3817caecba29c40ba9","dsps_acos_dspMeta_json":"12133c48a2c05a2cce87","dsps_acosh_dspMeta_json":"b3bece826caa86450e9e","dsps_add_dspMeta_json":"6da97aa4361554dd99e7","dsps_asin_dspMeta_json":"8140f9f4a99b46a1bc5c","dsps_asinh_dspMeta_json":"78bed74ab6c90673e1b6","dsps_atan_dspMeta_json":"e31ac747e32e12fbe13a","dsps_atan2_dspMeta_json":"b2f14bc3000a1b641238","dsps_atanh_dspMeta_json":"1500841eee8536170e3f","dsps_atodb_dspMeta_json":"2711f4fa9a20a08f5fd1","dsps_bitand_dspMeta_json":"f8f8e1aaead815d05393","dsps_bitor_dspMeta_json":"0492285e4001b9bb35bf","dsps_bitxor_dspMeta_json":"efca265b74ffa2ad2cba","dsps_change_dspMeta_json":"dc2acf5598e3f9530b88","dsps_dbtoa_dspMeta_json":"facbf9ea77af396e0dd7","dsps_div_dspMeta_json":"66288eba2b16e46319c5","dsps_eq_dspMeta_json":"8bd957eb1e00368cc97e","dsps_ftom_dspMeta_json":"0b9e94d6c6980b077adc","dsps_geq_dspMeta_json":"96e8e77eb6fa3f2a7986","dsps_gtr_dspMeta_json":"2a5f03f3c9b3dec25405","dsps_leq_dspMeta_json":"ee6f70983dc3eec249bd","dsps_log_dspMeta_json":"7991feedbe5d7a307477","dsps_lss_dspMeta_json":"4368b0aac56a6bf5ac90","dsps_max_dspMeta_json":"66fad1b0eaa76674e58e","dsps_min_dspMeta_json":"81f11dcb708ae890f8fc","dsps_mod_dspMeta_json":"c860917339731b4ae8e6","dsps_mtof_dspMeta_json":"7f2e7c95d94bb7756967","dsps_mul_dspMeta_json":"0fe7a788b828c4f3b32c","dsps_neq_dspMeta_json":"5d1f374404b85c1c1866","dsps_noise_dspMeta_json":"93457af337c77b0e0bd3","dsps_pink_dspMeta_json":"fd5f4cf6c927abf10774","dsps_rdiv_dspMeta_json":"28036c01195f9877c25e","dsps_rsub_dspMeta_json":"9b4f8b071da9f777f082","dsps_sub_dspMeta_json":"d10f0d4270bcf7822fa0"}[chunkId] + ".js";
 /******/ 	};
 /******/ })();
 /******/ 
@@ -3420,16 +3662,29 @@ var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (async () => {
   const objects = {};
   const dspIdMap = {
-    add: "+~",
-    sub: "-~",
-    mul: "*~",
-    div: "/~"
+    add: "+",
+    sub: "-",
+    rsub: "!-",
+    mul: "*",
+    div: "/",
+    rdiv: "!/",
+    gtr: ">",
+    geq: ">=",
+    lss: "<",
+    leq: "<=",
+    eq: "=",
+    neq: "!=",
+    mod: "%",
+    bitand: "&",
+    bitor: "|",
+    max: "maximum",
+    min: "minimum"
   };
   const dsps = await (0,_getDsps__WEBPACK_IMPORTED_MODULE_1__["default"])();
   const faustDspGenerator = new _shren_faustwasm__WEBPACK_IMPORTED_MODULE_0__.FaustMonoDspGenerator();
   for (const dspId in dsps) {
     const dspFactory = dsps[dspId];
-    objects[dspIdMap[dspId]] = class extends _FaustDspObject__WEBPACK_IMPORTED_MODULE_2__["default"] {
+    objects[`${dspIdMap[dspId] || dspId}~`] = class extends _FaustDspObject__WEBPACK_IMPORTED_MODULE_2__["default"] {
       constructor() {
         super(...arguments);
         this._ = __spreadProps(__spreadValues({}, this._), {

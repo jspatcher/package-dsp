@@ -1,0 +1,33 @@
+{
+    "name": "geq",
+    "filename": "geq",
+    "version": "2.32.6",
+    "compile_options": "-lang wasm-i -es 1 -single -ftz 0",
+    "include_pathnames": [
+        "/share/faust",
+        "/usr/local/share/faust",
+        "/usr/share/faust",
+        "."
+    ],
+    "size": 4,
+    "inputs": 2,
+    "outputs": 1,
+    "meta": [
+        {
+            "compile_options": "-lang wasm-i -es 1 -single -ftz 0"
+        },
+        {
+            "filename": "geq"
+        },
+        {
+            "name": "geq"
+        }
+    ],
+    "ui": [
+        {
+            "type": "vgroup",
+            "label": "geq",
+            "items": []
+        }
+    ]
+}

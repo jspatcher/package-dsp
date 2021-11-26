@@ -1,0 +1,43 @@
+{
+    "name": "atodb",
+    "filename": "atodb",
+    "version": "2.32.6",
+    "compile_options": "-lang wasm-i -es 1 -single -ftz 0",
+    "library_list": [
+        "/usr/share/faust/stdfaust.lib",
+        "/usr/share/faust/basics.lib"
+    ],
+    "include_pathnames": [
+        "/share/faust",
+        "/usr/local/share/faust",
+        "/usr/share/faust",
+        "."
+    ],
+    "size": 4,
+    "inputs": 1,
+    "outputs": 1,
+    "meta": [
+        {
+            "basics.lib/name": "Faust Basic Element Library"
+        },
+        {
+            "basics.lib/version": "0.1"
+        },
+        {
+            "compile_options": "-lang wasm-i -es 1 -single -ftz 0"
+        },
+        {
+            "filename": "atodb"
+        },
+        {
+            "name": "atodb"
+        }
+    ],
+    "ui": [
+        {
+            "type": "vgroup",
+            "label": "atodb",
+            "items": []
+        }
+    ]
+}

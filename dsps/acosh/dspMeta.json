@@ -1,0 +1,54 @@
+{
+    "name": "acosh",
+    "filename": "acosh",
+    "version": "2.32.6",
+    "compile_options": "-lang wasm-i -es 1 -single -ftz 0",
+    "library_list": [
+        "/usr/share/faust/math.lib"
+    ],
+    "include_pathnames": [
+        "/share/faust",
+        "/usr/local/share/faust",
+        "/usr/share/faust",
+        "."
+    ],
+    "size": 4,
+    "inputs": 1,
+    "outputs": 1,
+    "meta": [
+        {
+            "compile_options": "-lang wasm-i -es 1 -single -ftz 0"
+        },
+        {
+            "filename": "acosh"
+        },
+        {
+            "math.lib/author": "GRAME"
+        },
+        {
+            "math.lib/copyright": "GRAME"
+        },
+        {
+            "math.lib/deprecated": "This library is deprecated and is not maintained anymore. It will be removed in August 2017."
+        },
+        {
+            "math.lib/license": "LGPL with exception"
+        },
+        {
+            "math.lib/name": "Math Library"
+        },
+        {
+            "math.lib/version": "1.0"
+        },
+        {
+            "name": "acosh"
+        }
+    ],
+    "ui": [
+        {
+            "type": "vgroup",
+            "label": "acosh",
+            "items": []
+        }
+    ]
+}
