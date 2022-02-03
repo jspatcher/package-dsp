@@ -1,7 +1,7 @@
 import { FaustAudioWorkletNode, FaustDspMeta, FaustMonoDspGenerator, LooseFaustDspFactory } from "@shren/faustwasm";
 import { author, name, version, description } from "./index";
 import { Bang, DefaultObject, DefaultUI } from "./sdk";
-import type { IArgsMeta, IInletsMeta, IOutletsMeta } from "@jspatcher/jspatcher/src/core/objects/base/AbstractObject";
+import type { IArgsMeta, IInletsMeta, IOutletsMeta, IPropsMeta } from "@jspatcher/jspatcher/src/core/objects/base/AbstractObject";
 
 export interface FaustDspInternalState {
     dspFactory: LooseFaustDspFactory;
@@ -10,8 +10,14 @@ export interface FaustDspInternalState {
     merger: ChannelMergerNode;
     node: FaustAudioWorkletNode;
     splitter: ChannelSplitterNode;
-    constant: ConstantSourceNode;
-    constantConnected: number;
+    defaultInputs: [];
+    constants: ConstantSourceNode[];
+    constantsConnected: boolean[];
+    argsOffset: number;
+}
+
+interface Props {
+    smoothInput: number;
 }
 
 export default class FaustDspObject<
@@ -19,8 +25,8 @@ export default class FaustDspObject<
     I extends [Bang | any, ...any[]] = [Bang],
     O extends any[] = [],
     A extends any[] = any[],
-    P = {}
-> extends DefaultObject<{}, S, I, O, A, P> {
+    P = Partial<Props> & Record<string, any>
+> extends DefaultObject<{}, S, I, O, A, P & Props> {
     static package = name;
     static author = author;
     static version = version;
@@ -39,66 +45,101 @@ export default class FaustDspObject<
     static args: IArgsMeta = [{
         type: "number",
         optional: true,
-        description: "Initial value for the first unconnected inlet",
+        varLength: true,
+        description: "Initial inputs",
         default: 0
     }];
-    static UI = DefaultUI;
-    _: Partial<FaustDspInternalState> & Record<string, any> = {
-        constant: this.audioCtx.createConstantSource()
+    static props: IPropsMeta<Props> = {
+        smoothInput: {
+            type: "number",
+            description: "Linear interpolate to input values within a duration in seconds",
+            default: 0.01,
+        }
     };
-    get unconnected() {
-        return this.inletLines.map(set => [...set].find(l => l.isConnectableByAudio)).findIndex(l => !l);
+    static UI = DefaultUI;
+    _: Partial<FaustDspInternalState> = {
+        defaultInputs: [],
+        constants: [],
+        constantsConnected: [],
+        argsOffset: 0
+    };
+    get audioConnections() {
+        return this.inletLines.map(set => [...set].find(l => !l.disabled && l.isConnectableByAudio)).map(l => !!l);
     }
     checkAndFillUnconnected() {
-        const { unconnected } = this;
-        const { constant, merger, constantConnected } = this._;
-        if (!merger) return;
-        if (unconnected !== constantConnected) {
-            if (constantConnected !== -1) constant.disconnect();
-            if (unconnected !== -1) constant.connect(merger, 0, unconnected);
-            this._.constantConnected = unconnected;
+        const { audioConnections } = this;
+        const { constants, constantsConnected } = this._;
+        if (!this.inlets) return;
+        for (let i = 0; i < this.inlets; i++) {
+            if (audioConnections[i] === constantsConnected[i]) continue;
+            const constant = constants[i];
+            if (audioConnections[i]) {
+                constant.offset.value = 0;
+            } else if (!audioConnections[i] && !constantsConnected[i]) {
+                constant.offset.value = this._.defaultInputs[i] || 0;
+            }
+            constantsConnected[i] = audioConnections[i];
         }
     }
     subscribe() {
+        super.subscribe();
         this.on("preInit", () => {
             const meta: FaustDspMeta = JSON.parse(this._.dspFactory.json);
-            const { inputs, outputs } = meta;
-            this.inlets = inputs;
-            this.outlets = outputs;
-            this.disconnectAudio();
+            const { inputs, outputs, meta: declaredMeta } = meta;
+            const defaultInputsStr = declaredMeta.find(m => "defaultInputs" in m)?.defaultInputs;
+            if (defaultInputsStr) this._.defaultInputs = JSON.parse(defaultInputsStr);
+            this._.argsOffset = +declaredMeta.find(m => "argsOffset" in m)?.argsOffset || 0;
             if (inputs) {
                 const merger = this.audioCtx.createChannelMerger(inputs);
                 this._.merger = merger;
-                this.inletAudioConnections = new Array(inputs).fill(null).map((v, i) => ({ node: merger, index: i }));
+                for (let i = 0; i < inputs; i++) {
+                    const constant = this.audioCtx.createConstantSource();
+                    this._.constants[i] = constant;
+                    constant.connect(merger, 0, i);
+                    this._.constantsConnected[i] = false;
+                }
             }
             const splitter = this.audioCtx.createChannelSplitter(outputs);
             this._.splitter = splitter;
+
+            this.inlets = inputs;
+            this.outlets = outputs;
+            this.disconnectAudio();
+            this.inletAudioConnections = this._.constants.map((node) => ({ node: node.offset, index: 0 }));
             this.outletAudioConnections = new Array(outputs).fill(null).map((v, i) => ({ node: splitter, index: i }));
             this.connectAudio();
         });
         this.on("postInit", async () => {
-            const { dspFactory, faustDspGenerator, dspId, constant, merger, splitter } = this._;
+            const { dspFactory, faustDspGenerator, dspId, constants, merger, splitter, argsOffset } = this._;
             const node = await faustDspGenerator.createNode(this.audioCtx, dspId, dspFactory);
             this._.node = node;
+            this.checkAndFillUnconnected();
             merger?.connect(node);
             node.connect(splitter);
-            constant.offset.value = +this.args[0] || 0;
-            constant.start();
-            this.checkAndFillUnconnected();
+            constants.forEach((constant, i) => {
+                if (!this._.constantsConnected[i]) constant.offset.value = +this.args[i - argsOffset] || (this._.defaultInputs[i] ?? 0);
+                constant.start();
+            });
         });
-        this.on("argsUpdated", ({ args }) => {
-            this._.constant.offset.value = +args[0] || 0;
+        this.on("argsUpdated", () => {
+            this._.constants.forEach((constant, i) => {
+                if (!this._.constantsConnected[i]) constant.offset.value = +this.args[i - this._.argsOffset] || (this._.defaultInputs[i] ?? 0);
+            });
         })
         this.on("inlet", ({ inlet, data }) => {
             if (typeof data === "number") {
-                this._.constant.offset.value = data;
+                if (this._.constants[inlet] && !this._.constantsConnected[inlet]) {
+                    const constant = this._.constants[inlet];
+                    constant.offset.value = constant.offset.value;
+                    constant.offset.linearRampToValueAtTime(data, this.audioCtx.currentTime + this.getProp("smoothInput"));
+                }
             }
         });
         this.on("connectedInlet", () => this.checkAndFillUnconnected());
         this.on("disconnectedInlet", () => this.checkAndFillUnconnected());
         this.on("destroy", () => {
-            const { constant, merger, splitter, node } = this._;
-            constant?.disconnect();
+            const { constants, merger, splitter, node } = this._;
+            constants.forEach(constant => constant?.disconnect());
             merger?.disconnect();
             splitter?.disconnect();
             node?.disconnect();

@@ -1,0 +1,54 @@
+{
+    "name": "biquad",
+    "filename": "biquad",
+    "version": "2.32.6",
+    "compile_options": "-lang wasm-i -es 1 -single -ftz 0",
+    "library_list": [
+        "/usr/share/faust/maxmsp.lib"
+    ],
+    "include_pathnames": [
+        "/share/faust",
+        "/usr/local/share/faust",
+        "/usr/share/faust",
+        "."
+    ],
+    "size": 16,
+    "inputs": 6,
+    "outputs": 1,
+    "meta": [
+        {
+            "argsOffset": "1"
+        },
+        {
+            "compile_options": "-lang wasm-i -es 1 -single -ftz 0"
+        },
+        {
+            "filename": "biquad"
+        },
+        {
+            "maxmsp.lib/author": "GRAME"
+        },
+        {
+            "maxmsp.lib/copyright": "GRAME"
+        },
+        {
+            "maxmsp.lib/license": "LGPL with exception"
+        },
+        {
+            "maxmsp.lib/name": "MaxMSP compatibility Library"
+        },
+        {
+            "maxmsp.lib/version": "1.1"
+        },
+        {
+            "name": "biquad"
+        }
+    ],
+    "ui": [
+        {
+            "type": "vgroup",
+            "label": "biquad",
+            "items": []
+        }
+    ]
+}
