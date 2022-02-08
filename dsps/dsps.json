@@ -16,6 +16,7 @@
     "bitor",
     "bitxor",
     "change",
+    "cycle",
     "dbtoa",
     "div",
     "eq",
