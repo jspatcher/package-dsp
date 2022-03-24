@@ -10,7 +10,12 @@ const config = {
     // "index.jsdsppkg.aw": './src/index.jsdsppkg.aw.ts'
   },
   resolve: {
-    extensions: ['.tsx', '.ts', '.js']
+    extensions: ['.tsx', '.ts', '.js'],
+    fallback: {
+      "url": false,
+      "fs/promises": false,
+      "crypto": false
+    }
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
