@@ -1,7 +1,7 @@
 import { FaustAudioWorkletNode, FaustDspMeta, FaustMonoDspGenerator, LooseFaustDspFactory } from "@shren/faustwasm";
 import { author, name, version, description } from "./index";
 import { Bang, DefaultObject, DefaultUI } from "./sdk";
-import type { IArgsMeta, IInletsMeta, IOutletsMeta, IPropsMeta } from "@jspatcher/jspatcher/src/core/objects/base/AbstractObject";
+import type { IArgMeta, IArgsMeta, IInletMeta, IInletsMeta, IOutletsMeta, IPropsMeta } from "@jspatcher/jspatcher/src/core/objects/base/AbstractObject";
 
 export interface FaustDspInternalState {
     dspFactory: LooseFaustDspFactory;
@@ -85,10 +85,7 @@ export default class FaustDspObject<
         super.subscribe();
         this.on("preInit", () => {
             const meta: FaustDspMeta = JSON.parse(this._.dspFactory.json);
-            const { inputs, outputs, meta: declaredMeta } = meta;
-            const defaultInputsStr = declaredMeta.find(m => "defaultInputs" in m)?.defaultInputs;
-            if (defaultInputsStr) this._.defaultInputs = JSON.parse(defaultInputsStr);
-            this._.argsOffset = +declaredMeta.find(m => "argsOffset" in m)?.argsOffset || 0;
+            const { inputs, outputs } = meta;
             if (inputs) {
                 const merger = this.audioCtx.createChannelMerger(inputs);
                 this._.merger = merger;

@@ -25,7 +25,13 @@
             "compile_options": "-lang wasm-i -es 1 -single -ftz 0"
         },
         {
+            "description": "Low Pass Filter"
+        },
+        {
             "filename": "lowpass"
+        },
+        {
+            "inputsDescription": "[``, `f0`, `gain`, `Q`]"
         },
         {
             "maths.lib/author": "GRAME"

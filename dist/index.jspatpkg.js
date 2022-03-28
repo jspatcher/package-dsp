@@ -448,6 +448,28 @@ module.exports = webpackAsyncContext;
 
 /***/ }),
 
+/***/ "./node_modules/@shren/faustwasm/dist/esm lazy recursive":
+/*!******************************************************************************!*\
+  !*** ./node_modules/@shren/faustwasm/dist/esm/ lazy strict namespace object ***!
+  \******************************************************************************/
+/***/ ((module) => {
+
+function webpackEmptyAsyncContext(req) {
+	// Here Promise.resolve().then() is used instead of new Promise() to prevent
+	// uncaught exception popping up in devtools
+	return Promise.resolve().then(() => {
+		var e = new Error("Cannot find module '" + req + "'");
+		e.code = 'MODULE_NOT_FOUND';
+		throw e;
+	});
+}
+webpackEmptyAsyncContext.keys = () => ([]);
+webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
+webpackEmptyAsyncContext.id = "./node_modules/@shren/faustwasm/dist/esm lazy recursive";
+module.exports = webpackEmptyAsyncContext;
+
+/***/ }),
+
 /***/ "./src/FaustDspObject.ts":
 /*!*******************************!*\
   !*** ./src/FaustDspObject.ts ***!
@@ -495,13 +517,8 @@ class FaustDspObject extends _sdk__WEBPACK_IMPORTED_MODULE_1__.DefaultObject {
   subscribe() {
     super.subscribe();
     this.on("preInit", () => {
-      var _a, _b;
       const meta = JSON.parse(this._.dspFactory.json);
-      const { inputs, outputs, meta: declaredMeta } = meta;
-      const defaultInputsStr = (_a = declaredMeta.find((m) => "defaultInputs" in m)) == null ? void 0 : _a.defaultInputs;
-      if (defaultInputsStr)
-        this._.defaultInputs = JSON.parse(defaultInputsStr);
-      this._.argsOffset = +((_b = declaredMeta.find((m) => "argsOffset" in m)) == null ? void 0 : _b.argsOffset) || 0;
+      const { inputs, outputs } = meta;
       if (inputs) {
         const merger = this.audioCtx.createChannelMerger(inputs);
         this._.merger = merger;
@@ -729,42 +746,20 @@ const {
 
 /***/ }),
 
-/***/ "../../faustwasm/dist/esm lazy recursive":
-/*!**************************************************************!*\
-  !*** ../../faustwasm/dist/esm/ lazy strict namespace object ***!
-  \**************************************************************/
-/***/ ((module) => {
-
-function webpackEmptyAsyncContext(req) {
-	// Here Promise.resolve().then() is used instead of new Promise() to prevent
-	// uncaught exception popping up in devtools
-	return Promise.resolve().then(() => {
-		var e = new Error("Cannot find module '" + req + "'");
-		e.code = 'MODULE_NOT_FOUND';
-		throw e;
-	});
-}
-webpackEmptyAsyncContext.keys = () => ([]);
-webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
-webpackEmptyAsyncContext.id = "../../faustwasm/dist/esm lazy recursive";
-module.exports = webpackEmptyAsyncContext;
-
-/***/ }),
-
 /***/ "./package.json":
 /*!**********************!*\
   !*** ./package.json ***!
   \**********************/
 /***/ ((module) => {
 
-module.exports = "{\n  \"name\": \"@jspatcher/package-dsp\",\n  \"version\": \"1.0.0\",\n  \"description\": \"The DSP package for JSPatcher\",\n  \"main\": \"dist/index.js\",\n  \"scripts\": {\n    \"prebuild\": \"node src/scripts/build-faust.js\",\n    \"build\": \"webpack --mode development\",\n    \"build-watch\": \"webpack --mode development --watch --stats-children\"\n  },\n  \"repository\": {\n    \"type\": \"git\",\n    \"url\": \"git+https://github.com/jspatcher/package-dsp.git\"\n  },\n  \"keywords\": [\n    \"jspatcher\"\n  ],\n  \"jspatcher\": {\n    \"isJSPatcherPackage\": true,\n    \"thumbnail\": \"\",\n    \"jspatpkg\": \"index.jspatpkg.js\"\n  },\n  \"author\": \"Fr0stbyteR\",\n  \"license\": \"GPL-3.0-or-later\",\n  \"bugs\": {\n    \"url\": \"https://github.com/jspatcher/package-dsp/issues\"\n  },\n  \"homepage\": \"https://github.com/jspatcher/package-dsp#readme\",\n  \"devDependencies\": {\n    \"@jspatcher/jspatcher\": \"^0.0.9\",\n    \"@shren/faustwasm\": \"^0.0.6\",\n    \"clean-webpack-plugin\": \"^4.0.0\",\n    \"esbuild-loader\": \"^2.16.0\",\n    \"typescript\": \"^4.4.4\",\n    \"webpack\": \"^5.64.1\",\n    \"webpack-cli\": \"^4.9.1\"\n  }\n}\n";
+module.exports = "{\n  \"name\": \"@jspatcher/package-dsp\",\n  \"version\": \"1.0.0\",\n  \"description\": \"The DSP package for JSPatcher\",\n  \"main\": \"dist/index.js\",\n  \"scripts\": {\n    \"prebuild\": \"node src/scripts/build-faust.js\",\n    \"build\": \"webpack --mode development\",\n    \"build-watch\": \"webpack --mode development --watch --stats-children\"\n  },\n  \"repository\": {\n    \"type\": \"git\",\n    \"url\": \"git+https://github.com/jspatcher/package-dsp.git\"\n  },\n  \"keywords\": [\n    \"jspatcher\"\n  ],\n  \"jspatcher\": {\n    \"isJSPatcherPackage\": true,\n    \"thumbnail\": \"\",\n    \"jspatpkg\": \"index.jspatpkg.js\"\n  },\n  \"author\": \"Fr0stbyteR\",\n  \"license\": \"GPL-3.0-or-later\",\n  \"bugs\": {\n    \"url\": \"https://github.com/jspatcher/package-dsp/issues\"\n  },\n  \"homepage\": \"https://github.com/jspatcher/package-dsp#readme\",\n  \"devDependencies\": {\n    \"@jspatcher/jspatcher\": \"^0.0.9\",\n    \"@shren/faustwasm\": \"^0.0.10\",\n    \"clean-webpack-plugin\": \"^4.0.0\",\n    \"esbuild-loader\": \"^2.16.0\",\n    \"typescript\": \"^4.4.4\",\n    \"webpack\": \"^5.64.1\",\n    \"webpack-cli\": \"^4.9.1\"\n  }\n}\n";
 
 /***/ }),
 
-/***/ "../../faustwasm/dist/esm/index.js":
-/*!*****************************************!*\
-  !*** ../../faustwasm/dist/esm/index.js ***!
-  \*****************************************/
+/***/ "./node_modules/@shren/faustwasm/dist/esm/index.js":
+/*!*********************************************************!*\
+  !*** ./node_modules/@shren/faustwasm/dist/esm/index.js ***!
+  \*********************************************************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -793,22 +788,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "getFaustAudioWorkletProcessor": () => (/* binding */ FaustAudioWorkletProcessor_default),
 /* harmony export */   "instantiateFaustModuleFromFile": () => (/* binding */ instantiateFaustModuleFromFile_default)
 /* harmony export */ });
-var __defProp = Object.defineProperty;
-var __getOwnPropSymbols = Object.getOwnPropertySymbols;
-var __hasOwnProp = Object.prototype.hasOwnProperty;
-var __propIsEnum = Object.prototype.propertyIsEnumerable;
-var __defNormalProp = (obj, key, value) => key in obj ? __defProp(obj, key, { enumerable: true, configurable: true, writable: true, value }) : obj[key] = value;
-var __spreadValues = (a, b) => {
-  for (var prop in b || (b = {}))
-    if (__hasOwnProp.call(b, prop))
-      __defNormalProp(a, prop, b[prop]);
-  if (__getOwnPropSymbols)
-    for (var prop of __getOwnPropSymbols(b)) {
-      if (__propIsEnum.call(b, prop))
-        __defNormalProp(a, prop, b[prop]);
-    }
-  return a;
-};
+// src/instantiateFaustModuleFromFile.ts
 var instantiateFaustModuleFromFile = async (jsFile, dataFile = jsFile.replace(/c?js$/, "data"), wasmFile = jsFile.replace(/c?js$/, "wasm")) => {
   let FaustModule;
   let dataBinary;
@@ -819,12 +799,12 @@ var instantiateFaustModuleFromFile = async (jsFile, dataFile = jsFile.replace(/c
 export default FaustModule;
 `;
     const jsFileMod = URL.createObjectURL(new Blob([jsCode], { type: "text/javascript" }));
-    FaustModule = (await __webpack_require__("../../faustwasm/dist/esm lazy recursive")(jsFileMod)).default;
+    FaustModule = (await __webpack_require__("./node_modules/@shren/faustwasm/dist/esm lazy recursive")(jsFileMod)).default;
     dataBinary = await (await fetch(dataFile)).arrayBuffer();
     wasmBinary = new Uint8Array(await (await fetch(wasmFile)).arrayBuffer());
   } else {
-    const fs = await __webpack_require__.e(/*! import() */ "_1e4a").then(__webpack_require__.t.bind(__webpack_require__, /*! fs/promises */ "?1e4a", 19));
-    const { pathToFileURL } = await __webpack_require__.e(/*! import() */ "_c3b6").then(__webpack_require__.t.bind(__webpack_require__, /*! url */ "?c3b6", 19));
+    const fs = await __webpack_require__.e(/*! import() */ "_c3af").then(__webpack_require__.t.bind(__webpack_require__, /*! fs/promises */ "?c3af", 19));
+    const { pathToFileURL } = await __webpack_require__.e(/*! import() */ "_af15").then(__webpack_require__.t.bind(__webpack_require__, /*! url */ "?af15", 19));
     let jsCode = await fs.readFile(jsFile, { encoding: "utf-8" });
     jsCode = `
 import process from "process";
@@ -842,7 +822,7 @@ export default FaustModule;
 `;
     const jsFileMod = jsFile.replace(/c?js$/, "mjs");
     await fs.writeFile(jsFileMod, jsCode);
-    FaustModule = (await __webpack_require__("../../faustwasm/dist/esm lazy recursive")(pathToFileURL(jsFileMod).href)).default;
+    FaustModule = (await __webpack_require__("./node_modules/@shren/faustwasm/dist/esm lazy recursive")(pathToFileURL(jsFileMod).href)).default;
     await fs.unlink(jsFileMod);
     dataBinary = (await fs.readFile(dataFile)).buffer;
     wasmBinary = (await fs.readFile(wasmFile)).buffer;
@@ -858,6 +838,8 @@ export default FaustModule;
   return faustModule;
 };
 var instantiateFaustModuleFromFile_default = instantiateFaustModuleFromFile;
+
+// src/FaustAudioWorkletProcessor.ts
 var getFaustAudioWorkletProcessor = (dependencies, faustData) => {
   const { registerProcessor, AudioWorkletProcessor, sampleRate } = globalThis;
   const {
@@ -1022,15 +1004,17 @@ var getFaustAudioWorkletProcessor = (dependencies, faustData) => {
   }
 };
 var FaustAudioWorkletProcessor_default = getFaustAudioWorkletProcessor;
+
+// src/FaustCompiler.ts
 var sha256 = async (str) => {
-  if (typeof crypto !== "undefined" && (crypto == null ? void 0 : crypto.subtle)) {
+  if (typeof crypto !== "undefined" && crypto?.subtle) {
     const inputBuffer = new TextEncoder().encode(str);
     const hashBuffer = await crypto.subtle.digest("SHA-256", inputBuffer);
     const hashArray = Array.from(new Uint8Array(hashBuffer));
     const hashHex = hashArray.map((b) => b.toString(16).padStart(2, "0")).join("");
     return hashHex;
   }
-  const crypto_node = await __webpack_require__.e(/*! import() */ "_7a82").then(__webpack_require__.t.bind(__webpack_require__, /*! crypto */ "?7a82", 19));
+  const crypto_node = await __webpack_require__.e(/*! import() */ "_c081").then(__webpack_require__.t.bind(__webpack_require__, /*! crypto */ "?c081", 19));
   return crypto_node.createHash("sha256").update(str).digest("hex");
 };
 var _FaustCompiler = class {
@@ -1068,7 +1052,7 @@ var _FaustCompiler = class {
           console.error(e);
           return null;
         }
-      } catch (e) {
+      } catch {
         this.fErrorMessage = this.fLibFaust.getErrorAfterException();
         console.error(`=> exception raised while running createDSPFactory: ${this.fErrorMessage}`);
         this.fLibFaust.cleanupAfterException();
@@ -1095,7 +1079,7 @@ var _FaustCompiler = class {
   expandDSP(code, args) {
     try {
       return this.fLibFaust.expandDSP("FaustDSP", code, args);
-    } catch (e) {
+    } catch {
       this.fErrorMessage = this.fLibFaust.getErrorAfterException();
       console.error(`=> exception raised while running expandDSP: ${this.fErrorMessage}`);
       this.fLibFaust.cleanupAfterException();
@@ -1105,7 +1089,7 @@ var _FaustCompiler = class {
   generateAuxFiles(name, code, args) {
     try {
       return this.fLibFaust.generateAuxFiles(name, code, args);
-    } catch (e) {
+    } catch {
       this.fErrorMessage = this.fLibFaust.getErrorAfterException();
       console.error(`=> exception raised while running generateAuxFiles: ${this.fErrorMessage}`);
       this.fLibFaust.cleanupAfterException();
@@ -1146,6 +1130,8 @@ var _FaustCompiler = class {
 var FaustCompiler = _FaustCompiler;
 FaustCompiler.gFactories = /* @__PURE__ */ new Map();
 var FaustCompiler_default = FaustCompiler;
+
+// src/FaustDspInstance.ts
 var FaustDspInstance = class {
   constructor(exports) {
     this.fExports = exports;
@@ -1185,6 +1171,8 @@ var FaustDspInstance = class {
   }
 };
 var FaustDspInstance_default = FaustDspInstance;
+
+// src/FaustWasmInstantiator.ts
 var FaustWasmInstantiator = class {
   static createWasmImport(memory) {
     return {
@@ -1392,6 +1380,8 @@ var FaustWasmInstantiator = class {
   }
 };
 var FaustWasmInstantiator_default = FaustWasmInstantiator;
+
+// src/FaustOfflineProcessor.ts
 var FaustOfflineProcessor = class {
   constructor(instance, bufferSize) {
     this.fDSPCode = instance;
@@ -1430,13 +1420,15 @@ var FaustOfflineProcessor = class {
         }
       }
       l += this.fBufferSize;
-      onUpdate == null ? void 0 : onUpdate(l);
+      onUpdate?.(l);
     }
     this.fDSPCode.stop();
     return outputs;
   }
 };
 var FaustOfflineProcessor_default = FaustOfflineProcessor;
+
+// src/FaustSvgDiagrams.ts
 var FaustSvgDiagrams = class {
   constructor(compiler) {
     this.compiler = compiler;
@@ -1446,7 +1438,7 @@ var FaustSvgDiagrams = class {
     try {
       const files2 = fs.readdir(`/${name}-svg/`);
       files2.filter((file) => file !== "." && file !== "..").forEach((file) => fs.unlink(`/${name}-svg/${file}`));
-    } catch (e) {
+    } catch {
     }
     const success = this.compiler.generateAuxFiles(name, code, `-lang wasm -svg ${args}`);
     if (!success)
@@ -1458,6 +1450,8 @@ var FaustSvgDiagrams = class {
   }
 };
 var FaustSvgDiagrams_default = FaustSvgDiagrams;
+
+// src/LibFaust.ts
 var LibFaust = class {
   constructor(module) {
     this.fModule = module;
@@ -1502,6 +1496,8 @@ var LibFaust = class {
   }
 };
 var LibFaust_default = LibFaust;
+
+// src/WavEncoder.ts
 var WavEncoder = class {
   static encode(audioBuffer, options) {
     const numberOfChannels = audioBuffer.length;
@@ -1674,6 +1670,8 @@ var Writer = class {
   }
 };
 var WavEncoder_default = WavEncoder;
+
+// src/WavDecoder.ts
 var WavDecoder = class {
   static decode(buffer, options) {
     const dataView = new DataView(buffer);
@@ -1854,6 +1852,8 @@ var Reader = class {
   }
 };
 var WavDecoder_default = WavDecoder;
+
+// src/FaustWebAudioDsp.ts
 var FaustBaseWebAudioDsp = class {
   constructor(sampleSize, bufferSize) {
     this.fOutputHandler = null;
@@ -1926,10 +1926,7 @@ var FaustBaseWebAudioDsp = class {
   updateOutputs() {
     if (this.fOutputsItems.length > 0 && this.fOutputHandler && this.fOutputsTimer-- === 0) {
       this.fOutputsTimer = 5;
-      this.fOutputsItems.forEach((item) => {
-        var _a;
-        return (_a = this.fOutputHandler) == null ? void 0 : _a.call(this, item, this.getParamValue(item));
-      });
+      this.fOutputsItems.forEach((item) => this.fOutputHandler?.(item, this.getParamValue(item)));
     }
   }
   metadata(handler) {
@@ -2416,7 +2413,7 @@ this.fAudioMixingHalf: ${this.fAudioMixingHalf}`;
   getMeta() {
     const o = this.fJSONDsp;
     const e = this.fJSONEffect;
-    const r = __spreadValues({}, o);
+    const r = { ...o };
     if (e) {
       r.ui = [{
         type: "tgroup",
@@ -2482,6 +2479,8 @@ this.fAudioMixingHalf: ${this.fAudioMixingHalf}`;
     this.fVoiceTable.forEach((voice) => voice.keyOff(hard));
   }
 };
+
+// src/FaustAudioWorkletNode.ts
 var FaustAudioWorkletNode = class extends (globalThis.AudioWorkletNode || null) {
   constructor(context, name, factory, options) {
     const JSONObj = JSON.parse(factory.json);
@@ -2653,7 +2652,7 @@ var FaustPolyAudioWorkletNode = class extends FaustAudioWorkletNode {
   getMeta() {
     const o = this.fJSONDsp;
     const e = this.fJSONEffect;
-    const r = __spreadValues({}, o);
+    const r = { ...o };
     if (e) {
       r.ui = [{
         type: "tgroup",
@@ -2681,6 +2680,8 @@ var FaustPolyAudioWorkletNode = class extends FaustAudioWorkletNode {
     return this.getMeta().ui;
   }
 };
+
+// src/FaustScriptProcessorNode.ts
 var FaustScriptProcessorNode = class extends (globalThis.ScriptProcessorNode || null) {
   init(instance) {
     this.fDSPCode = instance;
@@ -2779,6 +2780,8 @@ var FaustPolyScriptProcessorNode = class extends FaustScriptProcessorNode {
     this.fDSPCode.allNotesOff(hard);
   }
 };
+
+// src/FaustDspGenerator.ts
 var _FaustMonoDspGenerator = class {
   constructor() {
     this.factory = null;
@@ -2928,6 +2931,8 @@ const dependencies = {
 };
 var FaustPolyDspGenerator = _FaustPolyDspGenerator;
 FaustPolyDspGenerator.gWorkletProcessors = /* @__PURE__ */ new Set();
+
+// src/index.ts
 var src_default = {
   instantiateFaustModuleFromFile: instantiateFaustModuleFromFile_default,
   getFaustAudioWorkletProcessor: FaustAudioWorkletProcessor_default,
@@ -2941,6 +2946,7 @@ var src_default = {
   WavDecoder: WavDecoder_default
 };
 
+//# sourceMappingURL=index.js.map
 
 
 /***/ })
@@ -3035,7 +3041,7 @@ var src_default = {
 /******/ 	// This function allow to reference async chunks
 /******/ 	__webpack_require__.u = (chunkId) => {
 /******/ 		// return url for filenames based on template
-/******/ 		return "js/" + {"_1e4a":"f75741ecb1df978717d1","_c3b6":"ac795581fa2dad8352c7","_7a82":"5758065bbde73098ecd9","dsps_dsps_json":"b94d417b259f91304c8d","dsps_abs_dspModule_wasm":"0e895ee6791de50053bb","dsps_acos_dspModule_wasm":"e26672c503d40f2111d4","dsps_acosh_dspModule_wasm":"6f0aa6108ac31d9d293e","dsps_add_dspModule_wasm":"59520c3ffa47a43cb833","dsps_allpass_dspModule_wasm":"eb0fb3b0e585933c48fc","dsps_asin_dspModule_wasm":"9353243215bc0de84983","dsps_asinh_dspModule_wasm":"7b13096f6480c9b64a41","dsps_atan_dspModule_wasm":"17811b5924fc4bcfa2d0","dsps_atan2_dspModule_wasm":"f39523de16707d695fab","dsps_atanh_dspModule_wasm":"46eefbd4bf523e0daada","dsps_atodb_dspModule_wasm":"4b669635bed770a4f84d","dsps_bandpass_dspModule_wasm":"3da35965e7fba7a06bed","dsps_biquad_dspModule_wasm":"e712f4c98963a774b5ae","dsps_bitand_dspModule_wasm":"e24cfbc81b220bb510c0","dsps_bitor_dspModule_wasm":"7ec716da07a4d1ec02ed","dsps_bitxor_dspModule_wasm":"1d3783e006ec0a56cd38","dsps_change_dspModule_wasm":"a3e83b249ba823cce546","dsps_cycle_dspModule_wasm":"370efb0d1ee02849f919","dsps_dbtoa_dspModule_wasm":"42f19657f03936408587","dsps_div_dspModule_wasm":"27e6a55f17c85264824b","dsps_eq_dspModule_wasm":"5df9245c238da4a4c65e","dsps_filtercoeff_dspModule_wasm":"205943ce972f1f0cf51f","dsps_ftom_dspModule_wasm":"ceb793c4c0589a21cab7","dsps_geq_dspModule_wasm":"e1579605d823cde93805","dsps_gtr_dspModule_wasm":"e59fbc64dbabf8bece3d","dsps_highpass_dspModule_wasm":"14e2a352382d7ef2bb77","dsps_highshelf_dspModule_wasm":"dcc8d4127b3045caf0e4","dsps_leq_dspModule_wasm":"427619c4c3c9f858f29e","dsps_log_dspModule_wasm":"d01b54837264c52bf1f4","dsps_lowpass_dspModule_wasm":"9b864930ceb49b36521b","dsps_lowshelf_dspModule_wasm":"566e6fac7ded81855f1d","dsps_lss_dspModule_wasm":"9101a9979f4ce4f1f14d","dsps_max_dspModule_wasm":"085829973d16a184e581","dsps_min_dspModule_wasm":"061389aa700fe93222cc","dsps_mod_dspModule_wasm":"9047203c1985fece9fc8","dsps_mtof_dspModule_wasm":"489240c018cf3f9993da","dsps_mul_dspModule_wasm":"ed0a39232ed1fbf0c58e","dsps_neq_dspModule_wasm":"8d999154774832980a82","dsps_noise_dspModule_wasm":"91ac41da19a38f77c84e","dsps_notch_dspModule_wasm":"14caf76091da1bbfa5a1","dsps_peaknotch_dspModule_wasm":"1bd5591107bf5d19f36d","dsps_phasor_dspModule_wasm":"e093628cc3e6ac1f5703","dsps_pink_dspModule_wasm":"86e1dda760e4f0723259","dsps_rdiv_dspModule_wasm":"1e700968a50412e80dbe","dsps_rect_dspModule_wasm":"ad3ead814821427e53ef","dsps_rsub_dspModule_wasm":"1411b5811e456c7b8a85","dsps_smooth_dspModule_wasm":"cafe56cbceb7ad260a00","dsps_sub_dspModule_wasm":"0053b421a7aa4a22ae8d","dsps_tri_dspModule_wasm":"2245f9469690321f7bc4","dsps_abs_dspMeta_json":"6c3817caecba29c40ba9","dsps_acos_dspMeta_json":"12133c48a2c05a2cce87","dsps_acosh_dspMeta_json":"b3bece826caa86450e9e","dsps_add_dspMeta_json":"96dd39bd6be98c8888ce","dsps_allpass_dspMeta_json":"e33d4407bd2b8d3dc448","dsps_asin_dspMeta_json":"8140f9f4a99b46a1bc5c","dsps_asinh_dspMeta_json":"78bed74ab6c90673e1b6","dsps_atan_dspMeta_json":"e31ac747e32e12fbe13a","dsps_atan2_dspMeta_json":"b2f14bc3000a1b641238","dsps_atanh_dspMeta_json":"1500841eee8536170e3f","dsps_atodb_dspMeta_json":"2711f4fa9a20a08f5fd1","dsps_bandpass_dspMeta_json":"4cd9c98d910da452b060","dsps_biquad_dspMeta_json":"1121a5ebe355b33da5de","dsps_bitand_dspMeta_json":"a7d8d8a168ba83e036fb","dsps_bitor_dspMeta_json":"eaf6bfdb89fe3b675a68","dsps_bitxor_dspMeta_json":"0d65eed8efaf26e6b6ee","dsps_change_dspMeta_json":"dc2acf5598e3f9530b88","dsps_cycle_dspMeta_json":"f4ed75a5700751a38c75","dsps_dbtoa_dspMeta_json":"facbf9ea77af396e0dd7","dsps_div_dspMeta_json":"201ef8f68aaecd6e06bc","dsps_eq_dspMeta_json":"d4e1e7931eda67d94427","dsps_filtercoeff_dspMeta_json":"1ff62a0a82f47115a0f6","dsps_ftom_dspMeta_json":"0b9e94d6c6980b077adc","dsps_geq_dspMeta_json":"199550099c85f5f73a4b","dsps_gtr_dspMeta_json":"fe67ff275178efcc1dae","dsps_highpass_dspMeta_json":"14ec9ea61df8dae0a795","dsps_highshelf_dspMeta_json":"509308f23fc38caba727","dsps_leq_dspMeta_json":"b0e3cb32371252bb4869","dsps_log_dspMeta_json":"a9424e6939342a36f126","dsps_lowpass_dspMeta_json":"440e7ee501ec5cb3d301","dsps_lowshelf_dspMeta_json":"b7928a3a225815b2798b","dsps_lss_dspMeta_json":"36961c3db5868cbbef4f","dsps_max_dspMeta_json":"76cdfa7d6d90f906f826","dsps_min_dspMeta_json":"0d98b880e53095f4e8b5","dsps_mod_dspMeta_json":"d96a637731e7ee3f8451","dsps_mtof_dspMeta_json":"7f2e7c95d94bb7756967","dsps_mul_dspMeta_json":"7b667828b1f1f68b7fdd","dsps_neq_dspMeta_json":"4f2b05acbcf5c1d203ac","dsps_noise_dspMeta_json":"93457af337c77b0e0bd3","dsps_notch_dspMeta_json":"2592ca62b24a84266184","dsps_peaknotch_dspMeta_json":"381029988d6e61814dd8","dsps_phasor_dspMeta_json":"2754144d946786f4459d","dsps_pink_dspMeta_json":"fd5f4cf6c927abf10774","dsps_rdiv_dspMeta_json":"37e336166cbd304951c1","dsps_rect_dspMeta_json":"0c03c6de7ce275335b56","dsps_rsub_dspMeta_json":"16aa81541405c9176c9f","dsps_smooth_dspMeta_json":"89fc8050207ddcd23e1b","dsps_sub_dspMeta_json":"159f299c6f4fbfe511ce","dsps_tri_dspMeta_json":"8ce43441e8192f99c4a9"}[chunkId] + ".js";
+/******/ 		return "js/" + {"_c3af":"467e9f93c7ae8038fc74","_af15":"1a4a00cbe9a7d6ae83c4","_c081":"ae400fe400166475907a","dsps_dsps_json":"b94d417b259f91304c8d","dsps_abs_dspModule_wasm":"0e895ee6791de50053bb","dsps_acos_dspModule_wasm":"e26672c503d40f2111d4","dsps_acosh_dspModule_wasm":"6f0aa6108ac31d9d293e","dsps_add_dspModule_wasm":"59520c3ffa47a43cb833","dsps_allpass_dspModule_wasm":"eb0fb3b0e585933c48fc","dsps_asin_dspModule_wasm":"9353243215bc0de84983","dsps_asinh_dspModule_wasm":"7b13096f6480c9b64a41","dsps_atan_dspModule_wasm":"17811b5924fc4bcfa2d0","dsps_atan2_dspModule_wasm":"f39523de16707d695fab","dsps_atanh_dspModule_wasm":"46eefbd4bf523e0daada","dsps_atodb_dspModule_wasm":"4b669635bed770a4f84d","dsps_bandpass_dspModule_wasm":"3da35965e7fba7a06bed","dsps_biquad_dspModule_wasm":"def23c0013b9897cceab","dsps_bitand_dspModule_wasm":"e24cfbc81b220bb510c0","dsps_bitor_dspModule_wasm":"7ec716da07a4d1ec02ed","dsps_bitxor_dspModule_wasm":"1d3783e006ec0a56cd38","dsps_change_dspModule_wasm":"a3e83b249ba823cce546","dsps_cycle_dspModule_wasm":"370efb0d1ee02849f919","dsps_dbtoa_dspModule_wasm":"42f19657f03936408587","dsps_div_dspModule_wasm":"27e6a55f17c85264824b","dsps_eq_dspModule_wasm":"5df9245c238da4a4c65e","dsps_filtercoeff_dspModule_wasm":"205943ce972f1f0cf51f","dsps_ftom_dspModule_wasm":"ceb793c4c0589a21cab7","dsps_geq_dspModule_wasm":"e1579605d823cde93805","dsps_gtr_dspModule_wasm":"e59fbc64dbabf8bece3d","dsps_highpass_dspModule_wasm":"14e2a352382d7ef2bb77","dsps_highshelf_dspModule_wasm":"dcc8d4127b3045caf0e4","dsps_leq_dspModule_wasm":"427619c4c3c9f858f29e","dsps_log_dspModule_wasm":"d01b54837264c52bf1f4","dsps_lowpass_dspModule_wasm":"89c7b5a498ff3327840c","dsps_lowshelf_dspModule_wasm":"566e6fac7ded81855f1d","dsps_lss_dspModule_wasm":"9101a9979f4ce4f1f14d","dsps_max_dspModule_wasm":"085829973d16a184e581","dsps_min_dspModule_wasm":"061389aa700fe93222cc","dsps_mod_dspModule_wasm":"9047203c1985fece9fc8","dsps_mtof_dspModule_wasm":"489240c018cf3f9993da","dsps_mul_dspModule_wasm":"ed0a39232ed1fbf0c58e","dsps_neq_dspModule_wasm":"8d999154774832980a82","dsps_noise_dspModule_wasm":"91ac41da19a38f77c84e","dsps_notch_dspModule_wasm":"14caf76091da1bbfa5a1","dsps_peaknotch_dspModule_wasm":"1bd5591107bf5d19f36d","dsps_phasor_dspModule_wasm":"e093628cc3e6ac1f5703","dsps_pink_dspModule_wasm":"86e1dda760e4f0723259","dsps_rdiv_dspModule_wasm":"1e700968a50412e80dbe","dsps_rect_dspModule_wasm":"ad3ead814821427e53ef","dsps_rsub_dspModule_wasm":"1411b5811e456c7b8a85","dsps_smooth_dspModule_wasm":"cafe56cbceb7ad260a00","dsps_sub_dspModule_wasm":"0053b421a7aa4a22ae8d","dsps_tri_dspModule_wasm":"2245f9469690321f7bc4","dsps_abs_dspMeta_json":"6c3817caecba29c40ba9","dsps_acos_dspMeta_json":"12133c48a2c05a2cce87","dsps_acosh_dspMeta_json":"b3bece826caa86450e9e","dsps_add_dspMeta_json":"96dd39bd6be98c8888ce","dsps_allpass_dspMeta_json":"e33d4407bd2b8d3dc448","dsps_asin_dspMeta_json":"8140f9f4a99b46a1bc5c","dsps_asinh_dspMeta_json":"78bed74ab6c90673e1b6","dsps_atan_dspMeta_json":"e31ac747e32e12fbe13a","dsps_atan2_dspMeta_json":"b2f14bc3000a1b641238","dsps_atanh_dspMeta_json":"1500841eee8536170e3f","dsps_atodb_dspMeta_json":"2711f4fa9a20a08f5fd1","dsps_bandpass_dspMeta_json":"4cd9c98d910da452b060","dsps_biquad_dspMeta_json":"4da126b81ce51439f06d","dsps_bitand_dspMeta_json":"a7d8d8a168ba83e036fb","dsps_bitor_dspMeta_json":"eaf6bfdb89fe3b675a68","dsps_bitxor_dspMeta_json":"0d65eed8efaf26e6b6ee","dsps_change_dspMeta_json":"dc2acf5598e3f9530b88","dsps_cycle_dspMeta_json":"f4ed75a5700751a38c75","dsps_dbtoa_dspMeta_json":"facbf9ea77af396e0dd7","dsps_div_dspMeta_json":"201ef8f68aaecd6e06bc","dsps_eq_dspMeta_json":"d4e1e7931eda67d94427","dsps_filtercoeff_dspMeta_json":"1ff62a0a82f47115a0f6","dsps_ftom_dspMeta_json":"0b9e94d6c6980b077adc","dsps_geq_dspMeta_json":"199550099c85f5f73a4b","dsps_gtr_dspMeta_json":"fe67ff275178efcc1dae","dsps_highpass_dspMeta_json":"14ec9ea61df8dae0a795","dsps_highshelf_dspMeta_json":"509308f23fc38caba727","dsps_leq_dspMeta_json":"b0e3cb32371252bb4869","dsps_log_dspMeta_json":"a9424e6939342a36f126","dsps_lowpass_dspMeta_json":"506cb72a60b374af8850","dsps_lowshelf_dspMeta_json":"b7928a3a225815b2798b","dsps_lss_dspMeta_json":"36961c3db5868cbbef4f","dsps_max_dspMeta_json":"76cdfa7d6d90f906f826","dsps_min_dspMeta_json":"0d98b880e53095f4e8b5","dsps_mod_dspMeta_json":"d96a637731e7ee3f8451","dsps_mtof_dspMeta_json":"7f2e7c95d94bb7756967","dsps_mul_dspMeta_json":"7b667828b1f1f68b7fdd","dsps_neq_dspMeta_json":"4f2b05acbcf5c1d203ac","dsps_noise_dspMeta_json":"93457af337c77b0e0bd3","dsps_notch_dspMeta_json":"2592ca62b24a84266184","dsps_peaknotch_dspMeta_json":"381029988d6e61814dd8","dsps_phasor_dspMeta_json":"2754144d946786f4459d","dsps_pink_dspMeta_json":"fd5f4cf6c927abf10774","dsps_rdiv_dspMeta_json":"37e336166cbd304951c1","dsps_rect_dspMeta_json":"0c03c6de7ce275335b56","dsps_rsub_dspMeta_json":"16aa81541405c9176c9f","dsps_smooth_dspMeta_json":"89fc8050207ddcd23e1b","dsps_sub_dspMeta_json":"159f299c6f4fbfe511ce","dsps_tri_dspMeta_json":"8ce43441e8192f99c4a9"}[chunkId] + ".js";
 /******/ 	};
 /******/ })();
 /******/ 
@@ -3213,9 +3219,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _shren_faustwasm__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @shren/faustwasm */ "../../faustwasm/dist/esm/index.js");
+/* harmony import */ var _shren_faustwasm__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @shren/faustwasm */ "./node_modules/@shren/faustwasm/dist/esm/index.js");
 /* harmony import */ var _getDsps__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./getDsps */ "./src/getDsps.ts");
 /* harmony import */ var _FaustDspObject__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./FaustDspObject */ "./src/FaustDspObject.ts");
+/* harmony import */ var _index__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./index */ "./src/index.ts");
 var __defProp = Object.defineProperty;
 var __defProps = Object.defineProperties;
 var __getOwnPropDescs = Object.getOwnPropertyDescriptors;
@@ -3238,7 +3245,9 @@ var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
 
 
 
+
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (async () => {
+  var _a, _b, _c, _d, _e;
   const objects = {};
   const dspIdMap = {
     add: "+",
@@ -3263,16 +3272,43 @@ var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
   const faustDspGenerator = new _shren_faustwasm__WEBPACK_IMPORTED_MODULE_0__.FaustMonoDspGenerator();
   for (const dspId in dsps) {
     const dspFactory = dsps[dspId];
-    objects[`${dspIdMap[dspId] || dspId}~`] = class extends _FaustDspObject__WEBPACK_IMPORTED_MODULE_2__["default"] {
+    const meta = JSON.parse(dspFactory.json);
+    const { meta: declaredMeta } = meta;
+    const descr = ((_a = declaredMeta.find((m) => "description" in m)) == null ? void 0 : _a.description) || _index__WEBPACK_IMPORTED_MODULE_3__.description;
+    const defaultInputsStr = (_b = declaredMeta.find((m) => "defaultInputs" in m)) == null ? void 0 : _b.defaultInputs;
+    const defaultInputs = defaultInputsStr ? JSON.parse(defaultInputsStr) : [];
+    const argsOffset = +((_c = declaredMeta.find((m) => "argsOffset" in m)) == null ? void 0 : _c.argsOffset) || 0;
+    const inputsDescr = (_d = declaredMeta.find((m) => "inputsDescription" in m)) == null ? void 0 : _d.inputsDescription;
+    const inputsDescrArr = inputsDescr ? JSON.parse(inputsDescr.replace(/`/g, '"')) : null;
+    objects[`${dspIdMap[dspId] || dspId}~`] = (_e = class extends _FaustDspObject__WEBPACK_IMPORTED_MODULE_2__["default"] {
       constructor() {
         super(...arguments);
         this._ = __spreadProps(__spreadValues({}, this._), {
           dspFactory,
           dspId,
-          faustDspGenerator
+          faustDspGenerator,
+          defaultInputs,
+          argsOffset
         });
       }
-    };
+    }, _e.description = descr, _e.inlets = (inputsDescrArr || [null]).map((d) => ({
+      isHot: true,
+      type: "signal",
+      description: d || "audio input connection",
+      varLength: true
+    })), _e.args = (inputsDescrArr == null ? void 0 : inputsDescrArr.slice(argsOffset).map((d, i) => ({
+      type: "number",
+      optional: true,
+      varLength: true,
+      description: d || `arg${i}`,
+      default: defaultInputs[i + argsOffset] || 0
+    }))) || [{
+      type: "number",
+      optional: true,
+      varLength: true,
+      description: "Initial inputs",
+      default: 0
+    }], _e);
   }
   return objects;
 });
