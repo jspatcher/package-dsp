@@ -30,7 +30,13 @@
             "compile_options": "-lang wasm-i -es 1 -single -ftz 0"
         },
         {
+            "description": "A sine wave generator with controllable phase"
+        },
+        {
             "filename": "cycle"
+        },
+        {
+            "inputsDescription": "[`freq`, `phase`]"
         },
         {
             "maths.lib/author": "GRAME"

@@ -3,6 +3,7 @@
     "acos",
     "acosh",
     "add",
+    "adsr",
     "allpass",
     "asin",
     "asinh",
@@ -47,5 +48,6 @@
     "rsub",
     "smooth",
     "sub",
-    "tri"
+    "tri",
+    "_"
 ]

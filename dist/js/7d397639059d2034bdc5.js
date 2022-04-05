@@ -6,7 +6,7 @@
   \************************************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-module.exports = __webpack_require__.p + "bc577e16bd932e72d92a.wasm";
+module.exports = __webpack_require__.p + "8bd46871ab394ea3ffb7.wasm";
 
 /***/ })
 
