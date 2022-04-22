@@ -12,9 +12,7 @@ const config = {
   resolve: {
     extensions: ['.tsx', '.ts', '.js'],
     fallback: {
-      "url": false,
-      "fs/promises": false,
-      "crypto": false
+      "url": false
     }
   },
   output: {

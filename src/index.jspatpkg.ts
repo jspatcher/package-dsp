@@ -1,4 +1,4 @@
-import { FaustDspMeta, FaustMonoDspGenerator } from "@shren/faustwasm";
+import type { FaustDspMeta } from "@shren/faustwasm";
 import getDsps from "./getDsps";
 import FaustDspObject, { FaustDspInternalState } from "./FaustDspObject";
 import { description } from "./index";
@@ -26,7 +26,6 @@ export default async () => {
         min: "minimum",
     };
     const dsps = await getDsps();
-    const faustDspGenerator = new FaustMonoDspGenerator();
     for (const dspId in dsps) {
         const dspFactory = dsps[dspId];
         const meta: FaustDspMeta = JSON.parse(dspFactory.json);
@@ -62,7 +61,7 @@ export default async () => {
                 ...this._,
                 dspFactory,
                 dspId,
-                faustDspGenerator,
+                faustDspGenerator: new this.env.Faust.FaustMonoDspGenerator(),
                 defaultInputs,
                 argsOffset
             }

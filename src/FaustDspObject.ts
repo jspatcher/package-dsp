@@ -1,7 +1,7 @@
-import { FaustAudioWorkletNode, FaustDspMeta, FaustMonoDspGenerator, LooseFaustDspFactory } from "@shren/faustwasm";
+import type { FaustAudioWorkletNode, FaustDspMeta, FaustMonoDspGenerator, LooseFaustDspFactory } from "@shren/faustwasm";
 import { author, name, version, description } from "./index";
 import { Bang, DefaultObject, DefaultUI } from "./sdk";
-import type { IArgMeta, IArgsMeta, IInletMeta, IInletsMeta, IOutletsMeta, IPropsMeta } from "@jspatcher/jspatcher/src/core/objects/base/AbstractObject";
+import type { IArgsMeta, IInletsMeta, IOutletsMeta, IPropsMeta } from "@jspatcher/jspatcher/src/core/objects/base/AbstractObject";
 
 export interface FaustDspInternalState {
     dspFactory: LooseFaustDspFactory;
