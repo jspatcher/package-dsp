@@ -53,7 +53,7 @@ export default class FaustDspObject<
         smoothInput: {
             type: "number",
             description: "Linear interpolate to input values within a duration in seconds",
-            default: 0.01,
+            default: 0,
         }
     };
     static UI = DefaultUI;

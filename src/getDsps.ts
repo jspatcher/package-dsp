@@ -1,5 +1,8 @@
 import type { LooseFaustDspFactory } from "@shren/faustwasm";
 
+import dspsRaw from "../dsps/dsps";
+
+/*
 export default async () => {
     const dsps: Record<string, LooseFaustDspFactory> = {};
     const listIn = await import("../dsps/dsps.json") as any;
@@ -16,3 +19,19 @@ export default async () => {
     }
     return dsps;
 };
+*/
+
+export default async () => {
+    const dsps: Record<string, LooseFaustDspFactory> = {};
+    for (const dspId in dspsRaw) {
+        const { module: moduleUri, json } = dspsRaw[dspId];
+        const moduleRes = await fetch(moduleUri);
+        const module = await WebAssembly.compileStreaming(moduleRes);
+        dsps[dspId] = {
+            module,
+            json
+        }
+    }
+    return dsps;
+}
+

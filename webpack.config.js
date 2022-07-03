@@ -34,7 +34,7 @@ const config = {
       exclude: /node_modules/
     }, {
       test: /\.wasm$/,
-      type: "asset/resource"
+      type: "asset/inline"
     }, {
       test: /\.json$/,
       type: "asset/source"

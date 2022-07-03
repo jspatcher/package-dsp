@@ -1,0 +1,42 @@
+{
+    "name": "distort",
+    "filename": "distort",
+    "version": "2.32.6",
+    "compile_options": "-lang wasm-i -es 1 -single -ftz 0",
+    "include_pathnames": [
+        "/share/faust",
+        "/usr/local/share/faust",
+        "/usr/share/faust",
+        "."
+    ],
+    "size": 4,
+    "inputs": 2,
+    "outputs": 1,
+    "meta": [
+        {
+            "argsOffset": "1"
+        },
+        {
+            "compile_options": "-lang wasm-i -es 1 -single -ftz 0"
+        },
+        {
+            "description": "Simple soft distortion ((1 + a) * x) / (1 + a * |x|)"
+        },
+        {
+            "filename": "distort"
+        },
+        {
+            "inputsDescription": "[``, `Factor (>= -1)`]"
+        },
+        {
+            "name": "distort"
+        }
+    ],
+    "ui": [
+        {
+            "type": "vgroup",
+            "label": "distort",
+            "items": []
+        }
+    ]
+}

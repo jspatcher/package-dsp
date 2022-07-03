@@ -1,0 +1,42 @@
+{
+    "name": "sah",
+    "filename": "sah",
+    "version": "2.32.6",
+    "compile_options": "-lang wasm-i -es 1 -single -ftz 0",
+    "include_pathnames": [
+        "/share/faust",
+        "/usr/local/share/faust",
+        "/usr/share/faust",
+        "."
+    ],
+    "size": 20,
+    "inputs": 3,
+    "outputs": 1,
+    "meta": [
+        {
+            "argsOffset": "2"
+        },
+        {
+            "compile_options": "-lang wasm-i -es 1 -single -ftz 0"
+        },
+        {
+            "description": "Sample and hold"
+        },
+        {
+            "filename": "sah"
+        },
+        {
+            "inputsDescription": "[`Value to sample`, `Trigger Input`, `Trigger threshold`]"
+        },
+        {
+            "name": "sah"
+        }
+    ],
+    "ui": [
+        {
+            "type": "vgroup",
+            "label": "sah",
+            "items": []
+        }
+    ]
+}
