@@ -32,7 +32,13 @@
             "compile_options": "-lang wasm-i -es 1 -single -ftz 0"
         },
         {
+            "description": "Generate signal ramp or envelop"
+        },
+        {
             "filename": "smooth"
+        },
+        {
+            "inputsDescription": "[`value`, `time in ms`]"
         },
         {
             "maths.lib/author": "GRAME"

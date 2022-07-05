@@ -38,6 +38,8 @@ import wasm_cycle from "./cycle/dspModule.wasm";
 import json_cycle from "./cycle/dspMeta.json";
 import wasm_dbtoa from "./dbtoa/dspModule.wasm";
 import json_dbtoa from "./dbtoa/dspMeta.json";
+import wasm_dcblocker from "./dcblocker/dspModule.wasm";
+import json_dcblocker from "./dcblocker/dspMeta.json";
 import wasm_distort from "./distort/dspModule.wasm";
 import json_distort from "./distort/dspMeta.json";
 import wasm_div from "./div/dspModule.wasm";
@@ -187,6 +189,10 @@ const map = {
     dbtoa: {
         module: wasm_dbtoa,
         json: json_dbtoa
+    },
+    dcblocker: {
+        module: wasm_dcblocker,
+        json: json_dcblocker
     },
     distort: {
         module: wasm_distort,

@@ -25,7 +25,13 @@
             "compile_options": "-lang wasm-i -es 1 -single -ftz 0"
         },
         {
+            "description": "All Pass Filter"
+        },
+        {
             "filename": "allpass"
+        },
+        {
+            "inputsDescription": "[``, `f0`, `gain in dB`, `Q`]"
         },
         {
             "maths.lib/author": "GRAME"

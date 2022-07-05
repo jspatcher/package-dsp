@@ -31,7 +31,7 @@
             "filename": "lowpass"
         },
         {
-            "inputsDescription": "[``, `f0`, `gain`, `Q`]"
+            "inputsDescription": "[``, `f0`, `gain in dB`, `Q`]"
         },
         {
             "maths.lib/author": "GRAME"

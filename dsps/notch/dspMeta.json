@@ -25,7 +25,13 @@
             "compile_options": "-lang wasm-i -es 1 -single -ftz 0"
         },
         {
+            "description": "Notch Filter"
+        },
+        {
             "filename": "notch"
+        },
+        {
+            "inputsDescription": "[``, `f0`, `gain in dB`, `Q`]"
         },
         {
             "maths.lib/author": "GRAME"
