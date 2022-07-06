@@ -114,13 +114,15 @@ export default class FaustDspObject<
             merger?.connect(node);
             node.connect(splitter);
             constants.forEach((constant, i) => {
-                if (!this._.constantsConnected[i]) constant.offset.value = +this.args[i - argsOffset] || (this._.defaultInputs[i] ?? 0);
+                const argValue = this.args[i - argsOffset];
+                if (!this._.constantsConnected[i]) constant.offset.value = typeof argValue === "number" ? +argValue : (this._.defaultInputs[i] ?? 0);
                 constant.start();
             });
         });
         this.on("argsUpdated", () => {
             this._.constants.forEach((constant, i) => {
-                if (!this._.constantsConnected[i]) constant.offset.value = +this.args[i - this._.argsOffset] || (this._.defaultInputs[i] ?? 0);
+                const argValue = this.args[i - this._.argsOffset];
+                if (!this._.constantsConnected[i]) constant.offset.value = typeof argValue === "number" ? +argValue : (this._.defaultInputs[i] ?? 0);
             });
         })
         this.on("inlet", ({ inlet, data }) => {

@@ -10,6 +10,8 @@ import wasm_adsr from "./adsr/dspModule.wasm";
 import json_adsr from "./adsr/dspMeta.json";
 import wasm_allpass from "./allpass/dspModule.wasm";
 import json_allpass from "./allpass/dspMeta.json";
+import wasm_ar from "./ar/dspModule.wasm";
+import json_ar from "./ar/dspMeta.json";
 import wasm_asin from "./asin/dspModule.wasm";
 import json_asin from "./asin/dspMeta.json";
 import wasm_asinh from "./asinh/dspModule.wasm";
@@ -133,6 +135,10 @@ const map = {
     allpass: {
         module: wasm_allpass,
         json: json_allpass
+    },
+    ar: {
+        module: wasm_ar,
+        json: json_ar
     },
     asin: {
         module: wasm_asin,
